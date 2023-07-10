@@ -353,29 +353,27 @@ Distribution::Thetha Abcde::crossover(int index)
 	vector<int> c(count_iter); // = {}
 	for (int j = 0; j < count_iter; j++) {
 		a[j] = j;
-		c[j] = j;
 	}
 	int len_group_c = rand() % count_iter;
 	for (int i = 0; i < len_group_c;i++)
 	{
-
-		// ïåðåíåñòè ðàíäîìíûé ýëåìåíò èç à â á
+		c[i] = a[rand() % a.size()];
 	}
 
 
 	
 	thetha_b = get_prev_iter_with_weight();
-	//ïîëó÷èòü â òåòå ñðåäíåå àðèôìåòè÷åñêîå òåò èç ãðóïï à
+	//Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã¢ Ã²Ã¥Ã²Ã¥ Ã±Ã°Ã¥Ã¤Ã­Ã¥Ã¥ Ã Ã°Ã¨Ã´Ã¬Ã¥Ã²Ã¨Ã·Ã¥Ã±ÃªÃ®Ã¥ Ã²Ã¥Ã² Ã¨Ã§ Ã£Ã°Ã³Ã¯Ã¯ Ã 
 
 	thetha_m = posterior.thetha[a[0]];
 	for (int i = 0;i < count_iter - len_group_c; i++)
 	{
 
-		thetha_m. += posterior.thetha[a[i]];
+		thetha_m += posterior.thetha[a[i]];
 	}
 	thetha_m /= count_iter - len_group_c;
 
-	//ïîëó÷èòü â òåòå ñðåäíåå àðèôìåòè÷åñêîå òåò èç ãðóïï b
+	//Ã¯Ã®Ã«Ã³Ã·Ã¨Ã²Ã¼ Ã¢ Ã²Ã¥Ã²Ã¥ Ã±Ã°Ã¥Ã¤Ã­Ã¥Ã¥ Ã Ã°Ã¨Ã´Ã¬Ã¥Ã²Ã¨Ã·Ã¥Ã±ÃªÃ®Ã¥ Ã²Ã¥Ã² Ã¨Ã§ Ã£Ã°Ã³Ã¯Ã¯ b
 	thetha_n = 0;
 	for (int i = 0;i < len_group_c; i++)
 	{
